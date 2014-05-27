@@ -2,10 +2,10 @@ var express = require('express');
 var mongoose = require('mongoose');
 var app = express();
 
-var port =process.env.PORT || 5000;
+var port = process.env.PORT || 5000;
 
 app.listen(port, function() {
-  console.log("Node app is running at localhost:" +port);
+    console.log("Node app is running at localhost:" + port);
 });
 
 console.log('Listening on port 8080');
@@ -24,7 +24,7 @@ db.once('open', function callback() {
     console.log('hey we are connected');
 
 });
- 
+
 var fs = require('fs');
 var AWS = require('aws-sdk');
 AWS.config.loadFromPath('awsconfig.json');
@@ -54,9 +54,9 @@ app.post('/biolage/create', Biolage.createContestant);
 app.get('/biolage/getlist', Biolage.getContestants);
 app.post('/biolage/deleteitem', Biolage.deleteContestant);
 
-app.post('/loreal/create',Loreal.createContestant);
-app.get('/loreal/getlist',Loreal.getContestants);
-app.post('/loreal/deleteitem',Loreal.deleteContestant);
+app.post('/loreal/create', Loreal.createContestant);
+app.get('/loreal/getlist', Loreal.getContestants);
+app.post('/loreal/deleteitem', Loreal.deleteContestant);
 
 
 app.post('/metroselfies/SelfieS3', function(req, res) {
@@ -68,13 +68,13 @@ app.post('/metroselfies/SelfieS3', function(req, res) {
 
     s3bucket.createBucket(function() {
 
-        var selfie = {Key: 'selfie/' + imageName + '.png', Body: buf, ACL: 'public-read', ContentType: "image/png"};
+        var selfie = {Key: 'selfie/' + imageName + '.jpg', Body: buf, ACL: 'public-read', ContentType: "image/jpg"};
         s3bucket.putObject(selfie, function(err, data) {
             if (err) {
                 console.log("Error uploading data: ", err);
                 res.send(err);
             } else {
-                res.send('https://s3.amazonaws.com/metroselfies/selfie/' + imageName + '.png');
+                res.send('https://s3.amazonaws.com/metroselfies/selfie/' + imageName + '.jpg');
             }
         });
     });
