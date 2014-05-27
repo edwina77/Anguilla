@@ -8,11 +8,12 @@ app.listen(port, function() {
     console.log("Node app is running at localhost:" + port);
 });
 
-console.log('Listening on port 8080');
 var SocialFeeds = require('./server/controller/social');
 var Lexus = require('./server/controller/lexus');
 var Biolage = require('./server/controller/biolage');
 var Loreal = require('./server/controller/loreal');
+
+app.use(express.bodyParser({keepExtensions: true, uploadDir: '/selfies', limit: '50mb'}));
 
 
 app.all('*', function(req, res, next) {
@@ -39,8 +40,6 @@ AWS.config.loadFromPath('awsconfig.json');
 
 var s3bucket = new AWS.S3({params: {Bucket: 'metroselfies'}});
 
-app.use(express.bodyParser({keepExtensions: true, uploadDir: '/selfies', limit: '50mb'}));
-
 
 app.get('/facebookfeeds', SocialFeeds.getfacebook);
 app.get('/twitterfeeds', SocialFeeds.getTwitter);
@@ -63,6 +62,7 @@ app.post('/loreal/deleteitem', Loreal.deleteContestant);
 
 
 app.post('/metroselfies/SelfieS3', function(req, res) {
+ 
     var bods = req.body;
     var img = bods.dataurl;
     var data = img.replace(/^data:image\/\w+;base64,/, "");
