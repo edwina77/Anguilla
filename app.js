@@ -14,6 +14,15 @@ var Lexus = require('./server/controller/lexus');
 var Biolage = require('./server/controller/biolage');
 var Loreal = require('./server/controller/loreal');
 
+
+app.all('*', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+   next();
+});
+
+
 var connectionString = 'mongodb://pbrain19:321654987p@ds051368.mongolab.com:51368/lexusemails';
 mongoose.connect(connectionString);
 
@@ -33,11 +42,6 @@ var s3bucket = new AWS.S3({params: {Bucket: 'metroselfies'}});
 
 app.use(express.bodyParser({keepExtensions: true, uploadDir: '/selfies', limit: '50mb'}));
 
-app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
-    next();
-});
 
 app.get('/facebookfeeds', SocialFeeds.getfacebook);
 app.get('/twitterfeeds', SocialFeeds.getTwitter);
