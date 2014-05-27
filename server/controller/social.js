@@ -39,7 +39,8 @@ exports.getfacebook = function(req, res) {
             FB.api(post.object_id, function(data) {
                 if (!data || data.error) {
 
-                    res.send('hey there it did not work');
+                    console.log('hey there it did not work');
+                    callback();
                 } else {
 
                     results.push({
