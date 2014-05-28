@@ -9,10 +9,10 @@ var loreal = mongoose.Schema({
    
     first: String,
     last: String,
-    results:{ answers:[String],
+     answers:[String],
         results:[String],
-        urls:[String]
-    },
+        urls:[String],
+    
     optIn:Boolean
 });
 
