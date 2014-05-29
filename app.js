@@ -12,6 +12,7 @@ var SocialFeeds = require('./server/controller/social');
 var Lexus = require('./server/controller/lexus');
 var Biolage = require('./server/controller/biolage');
 var Loreal = require('./server/controller/loreal');
+var Vacation = require('./server/controller/vacation');
 
 app.use(express.bodyParser({keepExtensions: true, uploadDir: '/selfies', limit: '50mb'}));
 
@@ -59,6 +60,12 @@ app.post('/biolage/deleteitem', Biolage.deleteContestant);
 app.post('/loreal/create', Loreal.createContestant);
 app.get('/loreal/getlist', Loreal.getContestants);
 app.post('/loreal/deleteitem', Loreal.deleteContestant);
+
+
+app.post('/loreal/create', Vacation.createContestant);
+app.get('/loreal/getlist', Vacation.getContestants); 
+
+
 
 
 app.post('/metroselfies/SelfieS3', function(req, res) {
