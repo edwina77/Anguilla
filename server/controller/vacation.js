@@ -10,7 +10,7 @@ var predata = require('../data/datastructure');
 
 exports.createContestant = function(req, res) {
 
-    var newContestant = new Survey(req.body);
+    var newContestant = new Survey(predata);
     newContestant.save(function(err, data) {
         if (err) {
             res.send(err);
