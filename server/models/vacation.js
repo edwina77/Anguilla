@@ -2,9 +2,9 @@
 
 
 var mongoose = require('mongoose');
-
-var vacation = mongoose.Schema({
-    qs : []
+var Schema = mongoose.Schema;
+var vacation = Schema({
+    qs : [Schema.Types.Mixed]
 });
 
 
