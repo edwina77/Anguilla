@@ -5,11 +5,12 @@
  */
 
 var Survey = require('../models/vacation').vacation;
+var predata = require('../data/datastructure');
 
 
 exports.createContestant = function(req, res) {
 
-    var newContestant = new Survey(req.body);
+    var newContestant = new Survey(predata);
     newContestant.save(function(err, data) {
         if (err) {
             res.send(err);
@@ -37,6 +38,10 @@ exports.getContestants = function(req, res) {
 
     });
 
+};
+
+exports.updateContestants = function(req, res){
+    Survey.update({},{$set : req.body}).exec();
 };
 
 exports.deleteContestant = function(req, res) {

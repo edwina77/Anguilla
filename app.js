@@ -62,7 +62,7 @@ app.get('/loreal/getlist', Loreal.getContestants);
 app.post('/loreal/deleteitem', Loreal.deleteContestant);
 
 
-app.post('/vacation/create', Vacation.createContestant);
+app.post('/vacation/update', Vacation.updateContestants);
 app.get('/vacation/getlist', Vacation.getContestants); 
 
 
