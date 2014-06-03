@@ -16,7 +16,7 @@ var vacation = new Schema({
     q6:String,
     q7:String,
     q8:String,
-    email : emailSchema
+    email : [emailSchema]
 });
 
 
