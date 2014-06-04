@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Questionnaire</title>
+        <link rel="stylesheet" href="css/quest.css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-controller="HomeCtrl" >
+
+        <div class="mainBody" ng-view="" ng-class="{pic0: pic[0],pic1: pic[1], pic2: pic[2], pic3: pic[3]}"></div> 
+        
+        <script src="lib/angular.js"></script>
+        <script src="lib/angular-route.js"></script>
+        <script src="lib/angular-animate.js"></script>
+        <script src="lib/ng-google-chart.js"></script>
+        <script src="js/questApp2.js"></script>
+        <script src="lib/mandrill.js"></script>
+    </body>
+</html>

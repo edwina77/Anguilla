@@ -3,10 +3,7 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var emailSchema = new Schema ({
-    name : String,
-    email : String
-});
+
 var vacation = new Schema({
     q1:String,
     q2:String,
@@ -16,7 +13,8 @@ var vacation = new Schema({
     q6:String,
     q7:String,
     q8:String,
-    email : [emailSchema]
+    email :String,
+    name :String
 });
 
 

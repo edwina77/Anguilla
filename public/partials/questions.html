@@ -1,0 +1,46 @@
+<div class="questions">
+    <ul>
+        <li ng-repeat="(keyQ,qt) in questions" ng-show="qNum==$index">
+            <p class="topQuestion" ng-if="topQ(qt.topquestion)">{{"Q" + ($index + 1) + " " + qt.topquestion}}</p>
+            <p class="question" ng-if="topQ(qt.topquestion)">{{qt.quest}}</p>
+            <p class="question" ng-if="!topQ(qt.topquestion)">{{"Q" + ($index + 1) + " " +  qt.quest}}</p>
+                <div class="choiceDiv" ng-repeat="(keyC,ch) in qt.choices">
+                    <!--
+                    <input ng-model="checkedAnswer" id={{getId(keyQ,keyC)}} ng-value="keyC" type="checkbox">
+                    -->
+                    <input name={{getRadioName(keyQ)}} ng-model="radio.value" id={{getId(keyQ,keyC)}} 
+                           value={{keyC}} type="radio" ng-click="makeActive(keyQ,keyC)">
+                    <!-- numbers 9 - 15 have headings -->
+                    <label for={{getId(keyQ,keyC)}} class="choices" >{{ch}}</label>
+                    
+                </div>
+                <!--
+                <li ng-repeat="ch in qt.choices" class="choices">
+                    {{ch}}
+                </li>
+                -->
+        </li>
+
+    </ul>
+    <div class="results" ng-show="qNum==20">
+        <div class="radioChart">
+            <p class="resultsPara"> Your Results </p>
+            <div class="repeatedRadios" ng-repeat="q in questions">
+                <div>
+                    <label class="radioChoiceChart"> <input type="radio" ng-model="viewChart.value" ng-value="$index" name="chartchoice" >
+                        {{getRadioChoiceLabel($index)}}
+                    </label>
+                </div>
+            </div>
+            <div  class="theChart" google-chart chart="chart" 
+                     style="border:1px inset black;padding:0;width:800px;height:400px"></div>            
+        </div>
+        <!--
+        <div class="theChart" google-chart chart={{"chartq" + }}style="border:1px inset black;padding:0;width:800px;height:400px">
+        </div>
+        -->
+    </div>
+    <button class="but" ng-click="submitChoice()" ng-show="qNum!=20 && picked">Submit</button>
+    <button class="but" ng-click="resetQuestions()" ng-show="qNum==20">Start Again</button>
+</div>
+

@@ -1,0 +1,71 @@
+<div class="questions" >
+    <ul>
+        <li ng-repeat="(keyQ,qt) in questions" ng-show="qNum==$index">
+            <p class="topQuestion" ng-if="topQ(qt.topquestion)">{{qt.topquestion}}</p>
+            <p class="question" ng-if="topQ(qt.topquestion)">{{qt.quest}}</p>
+            <p class="question" ng-if="!topQ(qt.topquestion)">{{qt.quest}}</p>
+                <div class="choiceDiv" ng-repeat="(keyC,ch) in qt.choices">
+                    <!--
+                    <input ng-model="checkedAnswer" id={{getId(keyQ,keyC)}} ng-value="keyC" type="checkbox">
+                    -->
+                    <input name={{getRadioName(keyQ)}} ng-model="radio.value" id={{getId(keyQ,keyC)}} 
+                           value={{keyC}} type="radio" ng-click="makeActive(keyQ,keyC)">
+                    <!-- numbers 9 - 15 have headings -->
+                    <label for={{getId(keyQ,keyC)}} class="choices" >{{ch[0]}}</label>
+                    <!--
+                    <input type="range" step="1" min="1" max="5" name={{getSliderName(keyC)}} ng-model="slider.value" value=1 ng-show="qNum==4">
+                    <input type="text" ng-value="slider.value" ng-show="qNum==4"> 
+                    -->
+                </div>
+                <!--
+                <li ng-repeat="ch in qt.choices" class="choices">
+                    {{ch}}
+                </li>
+                -->
+        </li>
+
+    </ul>
+    <div class="greyBackground" ng-show="emailModal"></div>
+    
+    <div class="modal" ng-show="emailModal"> 
+        <p class="modalPara"> Please share your email address to access your gateway to Tranquility Wrapped in Blue</p>
+        <div class="uInput">
+            <label for="uName">Name</label>
+            <input id="uName" type="text" class="modalInput" ng-model="user.name" >
+        </div>
+        <div class="uInput">
+            <label for="uEmail">Email</label>
+            <input id="uEmail" class="modalInput" type="email" ng-model="user.email" ng-valid >
+        </div>
+        <button class="emailButton" ng-show="!mailSent" ng-click="sendTheMail()"> Send email </button>
+        <button class="emailButton" ng-show="mailSent" ng-click="finishMail()" >Compare Survey Results</button>
+    </div>
+    
+    <div class="results" ng-show="qNum==8">
+        <div class="radioChart">
+            <!--<p class="resultsPara"> Your Results </p> -->
+            <p class="instruc">Click below to compare your results with other survey takers</p>
+            <div class="repeatedRadios" ng-repeat="q in questions">
+                <div>
+                    <label class="radioChoiceChart"> <input type="radio" ng-model="viewChart.value" ng-value="$index" name="chartchoice" >
+                        {{getRadioChoiceLabel($index)}}
+                    </label>
+                </div>
+            </div>
+            <p class="repeatQuestion">{{questions[viewChart.value].topquestion + "  " + questions[viewChart.value].quest}} </p>
+            <!--<p class="repeatAnswer"> {{questions[viewChart.value].choices[results[viewChart.value][1]][0]}}</p> -->
+            <p class="repeatAnswer"> {{questions[viewChart.value].choices[results[viewChart.value][1]][0]}}
+            <!--{{resObj["q" + viewChart.value]}}</p> -->
+            {{getUserAnswer(viewChart.value)}}</p>
+            <div  class="theChart" google-chart chart="chart" 
+                     style="border-radius:10px;padding:0;width:1000px;height:600px;"></div>            
+        </div>
+        <!--
+        <div class="theChart" google-chart chart={{"chartq" + }}style="border:1px inset black;padding:0;width:800px;height:400px">
+        </div>
+        -->
+    </div>
+    <button class="but" ng-click="submitChoice()" ng-show="qNum!=8 && picked">Submit</button>
+    <button class="but" ng-click="resetQuestions()" ng-show="qNum==8">Start Again</button>
+</div>
+

@@ -1,0 +1,211 @@
+{ "qs" : [          { "quest" : "What does “Tranquility Wrapped in Blue” mean to you?",
+                        "choices" : [
+                        ["Enjoying a day at the beach, glorying in the sun and sipping a delicious libation",0],
+                        ["Culinary explorations that help in the discovery of a new favorite dish or cuisine",0],
+                        ["Relaxing in the comforts of a well-appointed accommodation",0],
+                        ["Taking in the picturesque backdrop and cultural offerings",0],
+                        ["An invigorating hike enveloped by a scenic landscape",0],
+                        ["Interacting with amicable locals and making new friends",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "How did you travel to your last holiday destination?",
+                        "choices" : [ 
+                       ["By car",0],
+                       ["By train",0],
+                       ["By plane",0],
+                       ["By boat",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "What is the most important feature of an island when choosing a getaway?",
+                        "choices" : [                        
+                        ["The beaches",0],
+                        ["The accommodations",0],
+                        ["The dining scene",0],
+                        ["The cultural heritage, events, and landmarks",0],
+                        ["The local residents",0],
+                        ["The shopping",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "What are your main interests in selecting a destination?",
+                        "choices" : [ 
+                        ["Adventure",0],
+                        ["Night life",0],
+                        ["Culture",0],
+                        ["Health",0],
+                        ["Nature",0],
+                        ["Religion",0],
+                        ["Rest and relaxation",0],
+                        ["Sports and recreation",0],
+                        ["Attending a conference, congress, seminar, and other forms of education",0],
+                        ["Visiting friends/relatives",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "Below are listed some elements that you might consider when choosing a destination. We ask you to evaluate each based on the level of importance. 1 being completely unimportant and 5 very important.",
+                        "choices" : [ 
+                        ["Personal safety and security",0],
+                        ["The destination can be easily reached",0],
+                        ["Overall cleanliness of the destination",0],
+                        ["Unspoiled nature",0],
+                        ["Climate conditions",0],
+                        ["Diversity of cultural/historical attractions",0],
+                        ["The quality of the accommodation",0],
+                        ["Friendliness of the local people",0],
+                        ["Organization of the local transportation services",0],
+                        ["The offer of local cuisine",0],
+                        ["Possibilities for shopping",0],
+                        ["Night life and entertainment",0],
+                        ["Opportunity for rest and relaxation",0],
+                        ["Availability of sport facilities and recreational activities",0],
+                        ["Offer of cultural and other events",0],
+                        ["Spa offering",0],
+                        ["Wellness offerings",0],
+                        ["Casino and gambling offer",0],
+                        ["Conference offer",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "Do you use travel for…",
+                        "choices" : [                         
+                        ["Business",0],
+                        ["Leisure",0],
+                        ["Meeting with friends and relatives",0],
+                        ["Special occasions",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "What are the most challenging problems that you face when choosing a destination?",
+                        "choices" : [                         
+                        ["Quality of service",0],
+                        ["Reliability",0],
+                        ["Language difficulties",0],
+                        ["Price/Cost",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "Do you prefer to use a tourist guide service or tour independently?",
+                        "choices" : [                         
+                        ["Yes",0],
+                        ["No",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "Where do you source your information when selecting your next vacation destination?",
+                        "choices" : [   
+                        ["I look up travel deals on related websites",0],
+                        ["I stay up to date with travel media outlets",0],
+                        ["Bloggers and social media suggestions take precedence",0],
+                        ["Word of mouth and friend recommendations",0],
+                        ["Visit places seen in Media, TV or in movies",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "Transportation",
+                        "choices" : [                   
+                        ["<1000",0],
+                        ["<2000",0],
+                        ["<2500",0],
+                        ["<3000",0]
+                        ],
+                        "topquestion" : "How much do you plan to spend per person during your visit on the following items?"
+                    },
+                    { "quest" :  "Accomodation",
+                        "choices" : [                    
+                        ["<1000",0],
+                        ["<2000",0],
+                        ["<2500",0],
+                        ["<3000",0]
+                        ],
+                        "topquestion" : "How much do you plan to spend per person during your visit on the following items?"
+                    },                        
+                    { "quest" :  "Restaurants, cafes",
+                        "choices" : [                    
+                        ["<1000",0],
+                        ["<2000",0],
+                        ["<2500",0],
+                        ["<3000",0]
+                        ],
+                        "topquestion" : "How much do you plan to spend per person during your visit on the following items?"
+                    },                        
+                    { "quest" :  "Souvenirs",
+                        "choices" : [                    
+                        ["<1000",0],
+                        ["<2000",0],
+                        ["<2500",0],
+                        ["<3000",0]
+                        ],
+                        "topquestion" : "How much do you plan to spend per person during your visit on the following items?"
+                    },                        
+                    { "quest" :  "Food",
+                        "choices" : [                    
+                        ["<1000",0],
+                        ["<2000",0],
+                        ["<2500",0],
+                        ["<3000",0]
+                        ],
+                        "topquestion" : "How much do you plan to spend per person during your visit on the following items?"
+                    },                        
+                    { "quest" :  "Other shopping",
+                        "choices" : [                    
+                        ["<1000",0],
+                        ["<2000",0],
+                        ["<2500",0],
+                        ["<3000",0]
+                        ],
+                        "topquestion" : "How much do you plan to spend per person during your visit on the following items?"
+                    },                        
+                    { "quest" :  "Entertainment, entrance fees",
+                        "choices" : [                    
+                        ["<1000",0],
+                        ["<2000",0],
+                        ["<2500",0],
+                        ["<3000",0]
+                        ],
+                        "topquestion" : "How much do you plan to spend per person during your visit on the following items?"
+                    },
+                    { "quest" :  "Are you familiar with Anguilla? If so how did you hear about the island?",
+                        "choices" : [                    
+                        ["The internet",0],
+                        ["Friends and relatives",0],
+                        ["Media",0],
+                        ["Books and guides",0],
+                        ["Travel agency",0],
+                        ["Fairs and/or exhibitions",0],
+                        ["It was part of the travel package",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "Of the upcoming activations, what would you like to be subscribed to?",
+                        "choices" : [ 
+                        ["WIE (Women, Inspiration and Enterprise)",0],
+                        ["WTA (World Travel Awards)",0],
+                        ["ART FESTIVAL",0],
+                        ["GOSPEL FESTIVAL",0],
+                        ["GOLF & WELLNESS TOURNAMENT",0],
+                        ["FOOD AND WINE FESTIVAL",0],
+                        ["MOONSPLASH",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "Your age is",
+                        "choices" : [                     
+                        ["Less than 24",0],
+                        ["Between 24 and 39",0],
+                        ["Between 40 and 55",0],
+                        ["Over 55",0]
+                        ],
+                        "topquestion" : ""
+                    },
+                    { "quest" :  "Are you?",
+                        "choices" : [ 
+                        ["Male",0],
+                        ["Female",0]
+                        ],
+                        "topquestion" : ""
+                    }
+                ]
+
+}

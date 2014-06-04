@@ -8,14 +8,10 @@ app.listen(port, function() {
     console.log("Node app is running at localhost:" + port);
 });
 
-var SocialFeeds = require('./server/controller/social');
-var Lexus = require('./server/controller/lexus');
-var Biolage = require('./server/controller/biolage');
-var Loreal = require('./server/controller/loreal');
 var Vacation = require('./server/controller/vacation');
 
 app.use(express.bodyParser({keepExtensions: true, uploadDir: '/selfies', limit: '50mb'}));
-
+app.use(express.static(__dirname + '/public'));
 
 app.all('*', function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,7 +20,7 @@ app.all('*', function(req, res, next) {
 });
 
 
-var connectionString = 'mongodb://pbrain19:321654987p@ds051368.mongolab.com:51368/lexusemails';
+var connectionString = "mongodb://admin:admin@ds043338.mongolab.com:43338/questapp";
 mongoose.connect(connectionString);
 
 
@@ -35,59 +31,6 @@ db.once('open', function callback() {
 
 });
 
-var fs = require('fs');
-var AWS = require('aws-sdk');
-AWS.config.loadFromPath('awsconfig.json');
-
-var s3bucket = new AWS.S3({params: {Bucket: 'metroselfies'}});
-
-
-app.get('/facebookfeeds', SocialFeeds.getfacebook);
-app.get('/twitterfeeds', SocialFeeds.getTwitter);
-app.get('/instagramfeeds', SocialFeeds.getInstagram);
-
-
-
-app.post('/leads/contactInfo', Lexus.createLead);
-app.post('/contestants/signup', Lexus.createContestant);
-app.get('/contestants/getList', Lexus.getContestants);
-
-
-app.post('/biolage/create', Biolage.createContestant);
-app.get('/biolage/getlist', Biolage.getContestants);
-app.post('/biolage/deleteitem', Biolage.deleteContestant);
-
-app.post('/loreal/create', Loreal.createContestant);
-app.get('/loreal/getlist', Loreal.getContestants);
-app.post('/loreal/deleteitem', Loreal.deleteContestant);
-
-
 app.post('/vacation/create', Vacation.createContestant);
 app.get('/vacation/getlist', Vacation.getContestants); 
 
-
-
-
-app.post('/metroselfies/SelfieS3', function(req, res) {
- 
-    var bods = req.body;
-    var img = bods.dataurl;
-    var data = img.replace(/^data:image\/\w+;base64,/, "");
-    var buf = new Buffer(data, 'base64');
-    var imageName = Math.floor((Math.random() * 1000000000000000) + 10000000);
-
-    s3bucket.createBucket(function() {
-
-        var selfie = {Key: 'selfie/' + imageName + '.jpg', Body: buf, ACL: 'public-read', ContentType: "image/jpg"};
-        s3bucket.putObject(selfie, function(err, data) {
-            if (err) {
-                console.log("Error uploading data: ", err);
-                res.send(err);
-            } else {
-                res.send('https://s3.amazonaws.com/metroselfies/selfie/' + imageName + '.jpg');
-            }
-        });
-    });
-
-
-});

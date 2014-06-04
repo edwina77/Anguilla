@@ -1,0 +1,109 @@
+{ "qs" : [   { "quest" : "What does “Tranquility Wrapped in Blue” mean to you?",
+                        "choices" : [
+                        "Enjoying a day at the beach, glorying in the sun and sipping a delicious libation",
+                        "Culinary explorations that help in the discovery of a new favorite dish",
+                        "Relaxing in the comforts of a well-appointed accommodation",
+                        "Taking in the culture offerings",
+                        "An invigorating hike to take in the scenic landscape",
+                        "Interacting with amicable locals and making new friends"
+                        ]
+                    },
+
+                    { "quest" :  "After the beach what is your favorite thing to do?",
+                        "choices" : [
+                        "I’d like to go back to my hotel and read a book or take a nap",
+                        "I’ve worked up an appetite and am in need of an epicurean fix",
+                        "Enjoy an evening of festivities amongst locals",
+                        "Let’s go shopping!"
+                        ]
+                    },
+                    
+                    { "quest" :  "What is the most important feature of an island?",
+                        "choices" : [                        
+                        "The beaches",
+                        "The accommodations",
+                        "The dining scene",
+                        "The cultural and local residents"
+                        ]
+                    },
+
+                    { "quest" :  "How do you choose a vacation destination?",
+                        "choices" : [                             
+                        "I go for the beaches",
+                        "I like to know the people and their heritage",
+                        "I’m a food connoisseur",
+                        "Exciting nightclub scenes"
+                        ]
+                    },
+
+                    { "quest" :  "What is your main interest in selecting a destination?",
+                        "choices" : [ 
+                        "Adventure",
+                        "Night life",
+                        "Culture",
+                        "Health",
+                        "Nature",
+                        "Religion",
+                        "Rest",
+                        "Sport",
+                        "Visiting friends/relatives",
+                        "Visiting places seen on TV, or in a movie"
+                        ]
+                    },
+
+                    { "quest" :  "Do you use travel for…",
+                        "choices" : [                         
+                        "Business",
+                        "Leisure",
+                        "Meeting with friends and relatives",
+                        "Special occasion"
+                        ]
+                    },
+
+                    { "quest" :  "What are the most challenging problems that you face when choosing a destination?",
+                        "choices" : [                         
+                        "Quality of services",
+                        "Reliability",
+                        "Language difficulties",
+                        "Price"
+                        ]
+                    },
+                    
+                    { "quest" :  "Do you prefer to use a tourist guide services or tour independently?",
+                        "choices" : [                         
+                        "Yes",
+                        "No"
+                        ]
+                    },
+
+                    { "quest" :  "Where do you get your information for choosing your next vacation destination?",
+                        "choices" : [   
+                        "I look up travel deals on related websites",
+                        "I stay up to date with travel media outlets",
+                        "Bloggers and social media suggestions take precedence ",
+                        "Word of mouth and friend recommendations are a must!"
+                        ]
+                    },
+
+
+                    { "quest" :  "What events would you like to see come to Anguilla?",
+                        "choices" : [ 
+                        "Jazz festival",
+                        "Art festival",
+                        "Food and Wine Festival"
+                        ]
+                    },
+
+                    { "quest" :  "Of the upcoming activations, what would you like to receive information for?",
+                        "choices" : [ 
+                        "WIE",
+                        "WTA",
+                        "ART FESTIVAL",
+                        "GOSPEL FESTIVAL",
+                        "GOLF & WELLNESS",
+                        "FOOD AND WINE"
+                        ]
+                    }
+                ]
+
+}
